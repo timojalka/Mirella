@@ -13,6 +13,9 @@ public class RealityManager : MonoBehaviour
     [SerializeField] CharacterController TrackedPlayer;
     [SerializeField] Camera TrackedPlayerCamera;
 
+    [SerializeField] Transform ShadowPlayer;
+    [SerializeField] Camera ShadowPlayerCamera;
+
     [SerializeField] Transform World1Anchor;
     [SerializeField] Transform World2Anchor;
 
@@ -30,9 +33,13 @@ public class RealityManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector3 playerOffset = TrackedPlayer.transform.position - CurrentAnchorPosition;
-        Vector3 newShadowPlayerLocation = playerOffset + OtherAnchorPosition;
-        Debug.Log(newShadowPlayerLocation);
+        // Update the Shadow Player location
+        ShadowPlayer.position = TrackedPlayer.transform.position - CurrentAnchorPosition + OtherAnchorPosition;
+        ShadowPlayer.rotation = TrackedPlayer.transform.rotation;
+
+        // Update the Shadow Player Camera location
+        ShadowPlayerCamera.transform.position = TrackedPlayerCamera.transform.position - CurrentAnchorPosition + OtherAnchorPosition;
+        ShadowPlayerCamera.transform.rotation = TrackedPlayerCamera.transform.rotation;
     }
 
 }
