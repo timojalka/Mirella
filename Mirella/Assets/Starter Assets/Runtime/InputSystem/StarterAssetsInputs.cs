@@ -1,17 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 #endif
 
 namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
+		[SerializeField] UnityEvent OnSecondary = new UnityEvent();
+
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
+		public bool secondaryaction;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -42,6 +49,11 @@ namespace StarterAssets
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
+		}
+
+		public void OnSecondaryAction(InputValue Value)
+		{
+			Input.GetMouseButtonDown(0);
 		}
 #endif
 

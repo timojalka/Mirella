@@ -31,7 +31,12 @@ public class RealityManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
+    {
+        SynchroniseShadow();   
+    }
+
+    void SynchroniseShadow()
     {
         // Update the Shadow Player location
         ShadowPlayer.position = TrackedPlayer.transform.position - CurrentAnchorPosition + OtherAnchorPosition;
@@ -42,4 +47,12 @@ public class RealityManager : MonoBehaviour
         ShadowPlayerCamera.transform.rotation = TrackedPlayerCamera.transform.rotation;
     }
 
+    public void FlipWorlds()
+    {
+        // TODO - Safety Check
+
+        TrackedPlayer.transform.position = ShadowPlayer.transform.position;
+        CurrentWorld = CurrentWorld == EWorld.World1 ? EWorld.World2 : EWorld.World1;
+        SynchroniseShadow();
+    }
 }

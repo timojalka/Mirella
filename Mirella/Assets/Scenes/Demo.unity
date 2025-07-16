@@ -42474,6 +42474,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 516248867}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FlipWorlds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RealityManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037519994470340177, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: OnSecondary.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6938360822184803436, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_Name
       value: Player
