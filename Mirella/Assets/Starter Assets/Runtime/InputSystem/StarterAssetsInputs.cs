@@ -11,14 +11,18 @@ namespace StarterAssets
 {
 	public class StarterAssetsInputs : MonoBehaviour
 	{
-		[SerializeField] UnityEvent OnSecondary = new UnityEvent();
+		[SerializeField] UnityEvent OnPerformWarp = new UnityEvent();
+
+		public InputActionAsset InputActions;
+
+		private InputAction m_warp;
 
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
 		public bool jump;
 		public bool sprint;
-		public bool secondaryaction;
+		public bool warp;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -27,8 +31,18 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+        private void OnEnable()
+        {
+            InputActions = GetComponent<InputActionAsset>();
+        }
+
+        private void OnDisable()
+        {
+            InputActions = null;
+        }
+
 #if ENABLE_INPUT_SYSTEM
-		public void OnMove(InputValue value)
+        public void OnMove(InputValue value)
 		{
 			MoveInput(value.Get<Vector2>());
 		}
@@ -51,9 +65,12 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
-		public void OnSecondaryAction(InputValue Value)
+		public void OnWarp(InputValue value)
 		{
-			Input.GetMouseButtonDown(0);
+			WarpInput(value.isPressed);
+
+			if (warp)
+				OnPerformWarp.Invoke();
 		}
 #endif
 
@@ -77,8 +94,13 @@ namespace StarterAssets
 		{
 			sprint = newSprintState;
 		}
-		
-		private void OnApplicationFocus(bool hasFocus)
+
+        public void WarpInput(bool newWarpState)
+        {
+            warp = newWarpState;
+        }
+
+        private void OnApplicationFocus(bool hasFocus)
 		{
 			SetCursorState(cursorLocked);
 		}

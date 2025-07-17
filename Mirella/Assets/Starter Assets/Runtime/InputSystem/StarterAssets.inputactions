@@ -42,13 +42,13 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Shifting",
-                    "type": "Value",
+                    "name": "Warp",
+                    "type": "Button",
                     "id": "1cced3bf-fe6c-42ca-9690-ba6829045af0",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -230,23 +230,23 @@
                 },
                 {
                     "name": "",
-                    "id": "2ac8c2aa-b823-4330-bc67-c0482067aed3",
-                    "path": "<Mouse>/leftButton",
+                    "id": "c856bf2b-887d-42fe-87d9-59e1d9cc30c5",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";KeyboardMouse",
-                    "action": "Shifting",
+                    "action": "Warp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "66450d75-254e-4f13-88a0-3ab1e3938235",
+                    "id": "3e813414-3dfd-4190-9032-84d4d8b64d58",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Xbox Controller;PS4 Controller",
-                    "action": "Shifting",
+                    "groups": ";Gamepad",
+                    "action": "Warp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
